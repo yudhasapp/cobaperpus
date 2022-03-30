@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- perpus.jenisbuku tree view -->
+    <record id="perpus_jenisbuku_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Buku</field>
+        <field name="model">perpus.jenisbuku</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- perpus.jenisbuku action window -->
+    <record id="perpus_jenisbuku_action" model="ir.actions.act_window">
+        <field name="name">Jenis Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">perpus.jenisbuku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="perpus_jenisbuku_menu_act" 
+        name="Jenis Buku" 
+        parent="perpus_master_menu_categ" 
+        action="perpus_jenisbuku_action" 
+        sequence="10"/>
+</odoo>

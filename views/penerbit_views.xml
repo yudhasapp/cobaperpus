@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- perpus.penerbit tree view -->
+    <record id="perpus_penerbit_view_tree" model="ir.ui.view">
+        <field name="name">Penerbit</field>
+        <field name="model">perpus.penerbit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="alper"/>
+                <field name="noper"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- perpus.penerbit action window -->
+    <record id="perpus_penerbit_action" model="ir.actions.act_window">
+        <field name="name">Penerbit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">perpus.penerbit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+    id="perpus_penerbit_menu_act" 
+    name="Penerbit" 
+    parent="perpus_master_menu_categ" 
+    action="perpus_penerbit_action" 
+    sequence="10"/>
+
+</odoo>
