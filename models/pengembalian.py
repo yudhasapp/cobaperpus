@@ -15,12 +15,12 @@ class Pengembalian(models.Model):
 
     tgl_kembali = fields.Date(string='', default=fields.Date.today())
         
-    # @api.model
-    # def create(self,vals):
-    #     record = super(Pengembalian, self).create(vals) 
-    #     if record.tgl_pengembalian:
-    #         self.env['perpus.peminjaman'].search([('id','=',record.order_id.id)]).write({'sudah_kembali':True})         
-    #         return record
+    @api.model
+    def create(self,vals):
+        record = super(Pengembalian, self).create(vals) 
+        if record.tgl_kembali:
+            self.env['perpus.peminjaman'].search([('id','=',record.peminjaman_id.id)]).write({'sudah_kembali':True})         
+            return record
 
     @api.model
     def unlink(self):
